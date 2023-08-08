@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            
+            <div class="buttons">
+                <input type="text" placeholder="0" id="input">
+                <button class="btn" onclick="ac('')">AC</button>
+                <button class="btn" onclick="del()">DEL</button>
+                <button class="btn" onclick="display('%')">%</button>
+                <button class="btn" onclick="display('/')">/</button>
+                <button class="btn" onclick="display('7')">7</button>
+                <button class="btn" onclick="display('8')">8</button>
+                <button class="btn" onclick="display('9')">9</button>
+                <button class="btn" onclick="display('*')">*</button>
+                <button class="btn" onclick="display('4')">4</button>
+                <button class="btn" onclick="display('5')">5</button>
+                <button class="btn" onclick="display('6')">6</button>
+                <button class="btn" onclick="display('-')">-</button>
+                <button class="btn" onclick="display('1')">1</button>
+                <button class="btn" onclick="display('2')">2</button>
+                <button class="btn" onclick="display('3')">3</button>
+                <button class="btn" onclick="display('+')">+</button>
+                <button class="btn" onclick="display('00')">00</button>
+                <button class="btn" onclick="display('0')">0</button>
+                <button class="btn" onclick="display('.')">.</button>
+                <button class="btn" onclick="equal('')">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var screen =document.getElementById("input")
+        function display(a){
+            screen.value += a;
+        }
+        function equal(){
+            try {
+                (screen.value) = eval(screen.value)
+            } catch (error) {
+                (screen.value) = "err"
+            }
+          
+        }
+        function ac(){
+        
+            screen.value ="0";
+        }
+        function del(){
+            screen.value = screen.value.slice(0,-1)
+        }
+        
+    </script>
+</body>
+</html>
